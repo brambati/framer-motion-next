@@ -1,0 +1,108 @@
+/* globals.css */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #08090f;
+  --text: #e2e4ed;
+  --muted: #52596b;
+  --accent: #00e5ff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* ── NAVEGAÇÃO ── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  gap: 2rem;
+  padding: 1.25rem 2rem;
+  background: rgba(8,9,15,.8);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .875rem;
+  transition: color .2s;
+}
+
+.nav a:hover { color: var(--text); }
+
+/* ── PAGES ── */
+.page {
+  padding: 8rem 2rem 4rem;
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── LISTA COM STAGGER ── */
+.card-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+
+.card:hover { border-color: rgba(0,229,255,.3); }
+.card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .5rem; }
+.card p { color: var(--muted); font-size: .83rem; line-height: 1.6; }
+
+/* ── MODAL (layoutId) ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: #111520;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 540px;
+  width: 100%;
+}
+
+.modal-content h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+.modal-content p  { color: var(--muted); line-height: 1.7; }
+
+.btn-fechar {
+  margin-top: 1.5rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--text);
+  padding: .6rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: .85rem;
+}
+/* ── EXTRAS DAS PÁGINAS ── */
+.nav a.ativo { color: var(--text); }
+.kicker { font-size: .8rem; letter-spacing: .25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.big { font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.08; font-weight: 800; letter-spacing: -.02em; max-width: 16ch; }
+.big em { font-style: normal; color: var(--accent); }
+.lead { color: var(--muted); font-size: 1.15rem; margin-top: 1.25rem; max-width: 46ch; line-height: 1.6; }
